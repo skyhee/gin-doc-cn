@@ -123,7 +123,7 @@ manners.ListenAndServe(":8888", r)
 
 <a name="router"></a>
 
-###路由
+### 路由
 <a name="basic-router"></a>
 
 - 基本路由
@@ -197,7 +197,7 @@ router.POST("/form", func(c *gin.Context) {
 
 <a name="controller"></a>
 
-###控制器
+### 控制器
 
 <a name="binding"></a>
 
@@ -263,7 +263,7 @@ func main() {
 ```
 <a name="request"></a>
 
-###请求
+### 请求
 <a name="request-header"></a>
 
 - 请求头
@@ -299,7 +299,7 @@ router.POST("/upload", func(c *gin.Context) {
 ```
 <a name="response"></a>
 
-###响应
+### 响应
 <a name="response-header"></a>
 
 - 响应头
@@ -467,7 +467,7 @@ func main() {
 ```
 <a name="view"></a>
 
-###视图
+### 视图
 <a name="view-param"></a>
 
 - 传参
@@ -478,7 +478,7 @@ func main() {
 
 <a name="middleware"></a>
 
-###中间件
+### 中间件
 <a name="middleware-use"></a>
 
 - 分类使用方式
@@ -588,7 +588,7 @@ func main() {
 2.
 <a name="db"></a>
 
-##数据库
+## 数据库
 <a name="db-mongodb"></a>
 
 - Mongodb
@@ -648,10 +648,10 @@ router.GET("/mongo", func(context *gin.Context){
 
 <a name="extensions"></a>
 
-##扩展包
+## 扩展包
 
 <a name="functions"></a>
 
-###常用方法
+### 常用方法
 - gin
 - Context

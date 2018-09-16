@@ -113,6 +113,33 @@ endless.ListenAndServe(":4242", router)
 manners.ListenAndServe(":8888", r)
 ```
 
+如果你使用的 golang 版本大于 1.8 版本, 那么可以用 http.Server 内置的 Shutdown 方法来实现优雅的关闭服务, 一个简单的示例代码如下:
+
+```
+srv := http.Server{
+    Addr: ":8080",
+    Handler: router,
+}
+
+go func() {
+    if err :+ srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+        log.Fatalf("listen: %s\n", err)
+    }
+}
+
+// 其他代码, 等待关闭信号
+...
+
+ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+defer cancel()
+if err := srv.Shutdown(ctx); err != nil {
+    log.Fatal("Server Shutdown: ", err)
+}
+log.Println("Server exiting")
+```
+
+完整的代码见 [graceful-shutdown](https://github.com/gin-gonic/gin/blob/master/examples/graceful-shutdown/graceful-shutdown/server.go).
+
 <a name="life-circle"></a>
 
 - 生命周期
